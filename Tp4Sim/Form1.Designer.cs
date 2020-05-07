@@ -45,17 +45,39 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cant_demand = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.politica_A = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.politica_b = new System.Windows.Forms.TextBox();
             this.resultado_ = new System.Windows.Forms.Label();
+            this.politica_b = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.politica_A = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.grilla_politica_a = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.grilla_politica_b = new System.Windows.Forms.DataGridView();
-            this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RNDplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantDemplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantOrdplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantVendplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantPerplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sobraplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reemplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUPplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costotalplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CosAc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantDemandada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantOrdenada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantVendida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantPerdida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sobra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reembolso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CosUtPer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoAcumulado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,6 +110,7 @@
             this.Generar.TabIndex = 21;
             this.Generar.Text = "Generar";
             this.Generar.UseVisualStyleBackColor = true;
+            this.Generar.Click += new System.EventHandler(this.Generar_Click);
             // 
             // groupBox3
             // 
@@ -106,7 +129,7 @@
             // 
             // prec_uti_perdida
             // 
-            this.prec_uti_perdida.Enabled = false;
+            this.prec_uti_perdida.Enabled = true;
             this.prec_uti_perdida.Location = new System.Drawing.Point(205, 32);
             this.prec_uti_perdida.MaxLength = 6;
             this.prec_uti_perdida.Name = "prec_uti_perdida";
@@ -135,7 +158,7 @@
             // 
             // precio_reemb
             // 
-            this.precio_reemb.Enabled = false;
+            this.precio_reemb.Enabled = true;
             this.precio_reemb.Location = new System.Drawing.Point(118, 32);
             this.precio_reemb.MaxLength = 6;
             this.precio_reemb.Name = "precio_reemb";
@@ -154,7 +177,7 @@
             // 
             // precio_costo
             // 
-            this.precio_costo.Enabled = false;
+            this.precio_costo.Enabled = true;
             this.precio_costo.Location = new System.Drawing.Point(22, 32);
             this.precio_costo.MaxLength = 4;
             this.precio_costo.Name = "precio_costo";
@@ -163,7 +186,7 @@
             // 
             // cant_generar
             // 
-            this.cant_generar.Enabled = false;
+            this.cant_generar.Enabled = true;
             this.cant_generar.Location = new System.Drawing.Point(124, 126);
             this.cant_generar.MaxLength = 6;
             this.cant_generar.Name = "cant_generar";
@@ -179,7 +202,6 @@
             this.label3.Size = new System.Drawing.Size(117, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "Cantidad a Generar";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // groupBox2
             // 
@@ -206,7 +228,7 @@
             // 
             // cant_perd
             // 
-            this.cant_perd.Enabled = false;
+            this.cant_perd.Enabled = true;
             this.cant_perd.Location = new System.Drawing.Point(184, 32);
             this.cant_perd.MaxLength = 6;
             this.cant_perd.Name = "cant_perd";
@@ -225,7 +247,7 @@
             // 
             // cant_demand
             // 
-            this.cant_demand.Enabled = false;
+            this.cant_demand.Enabled = true;
             this.cant_demand.Location = new System.Drawing.Point(51, 32);
             this.cant_demand.MaxLength = 4;
             this.cant_demand.Name = "cant_demand";
@@ -246,24 +268,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Resultados";
             // 
-            // label8
+            // resultado_
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Politica A";
+            this.resultado_.AutoSize = true;
+            this.resultado_.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultado_.Location = new System.Drawing.Point(187, 59);
+            this.resultado_.Name = "resultado_";
+            this.resultado_.Size = new System.Drawing.Size(64, 13);
+            this.resultado_.TabIndex = 25;
+            this.resultado_.Text = "Resultado";
             // 
-            // politica_A
+            // politica_b
             // 
-            this.politica_A.Enabled = false;
-            this.politica_A.Location = new System.Drawing.Point(73, 39);
-            this.politica_A.MaxLength = 6;
-            this.politica_A.Name = "politica_A";
-            this.politica_A.Size = new System.Drawing.Size(46, 20);
-            this.politica_A.TabIndex = 22;
+            this.politica_b.Enabled = true;
+            this.politica_b.Location = new System.Drawing.Point(73, 77);
+            this.politica_b.MaxLength = 6;
+            this.politica_b.Name = "politica_b";
+            this.politica_b.Size = new System.Drawing.Size(46, 20);
+            this.politica_b.TabIndex = 24;
             // 
             // label9
             // 
@@ -275,24 +297,24 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Politica B";
             // 
-            // politica_b
+            // politica_A
             // 
-            this.politica_b.Enabled = false;
-            this.politica_b.Location = new System.Drawing.Point(73, 77);
-            this.politica_b.MaxLength = 6;
-            this.politica_b.Name = "politica_b";
-            this.politica_b.Size = new System.Drawing.Size(46, 20);
-            this.politica_b.TabIndex = 24;
+            this.politica_A.Enabled = true;
+            this.politica_A.Location = new System.Drawing.Point(73, 39);
+            this.politica_A.MaxLength = 6;
+            this.politica_A.Name = "politica_A";
+            this.politica_A.Size = new System.Drawing.Size(46, 20);
+            this.politica_A.TabIndex = 22;
             // 
-            // resultado_
+            // label8
             // 
-            this.resultado_.AutoSize = true;
-            this.resultado_.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultado_.Location = new System.Drawing.Point(187, 59);
-            this.resultado_.Name = "resultado_";
-            this.resultado_.Size = new System.Drawing.Size(64, 13);
-            this.resultado_.TabIndex = 25;
-            this.resultado_.Text = "Resultado";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Politica A";
             // 
             // groupBox5
             // 
@@ -314,7 +336,18 @@
             this.grilla_politica_a.AllowUserToDeleteRows = false;
             this.grilla_politica_a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_politica_a.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Dias});
+            this.Dias,
+            this.RND,
+            this.CantDemandada,
+            this.CantOrdenada,
+            this.CantVendida,
+            this.CantPerdida,
+            this.Sobra,
+            this.CostCompra,
+            this.Reembolso,
+            this.CosUtPer,
+            this.CostoTotal,
+            this.CostoAcumulado});
             this.grilla_politica_a.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grilla_politica_a.Location = new System.Drawing.Point(3, 16);
             this.grilla_politica_a.Name = "grilla_politica_a";
@@ -344,7 +377,18 @@
             this.grilla_politica_b.AllowUserToDeleteRows = false;
             this.grilla_politica_b.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_politica_b.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.RNDplb,
+            this.CantDemplb,
+            this.CantOrdplb,
+            this.CantVendplb,
+            this.CantPerplb,
+            this.Sobraplb,
+            this.COplb,
+            this.Reemplb,
+            this.CUPplb,
+            this.Costotalplb,
+            this.CosAc});
             this.grilla_politica_b.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grilla_politica_b.Location = new System.Drawing.Point(3, 16);
             this.grilla_politica_b.Name = "grilla_politica_b";
@@ -354,17 +398,149 @@
             this.grilla_politica_b.TabIndex = 0;
             this.grilla_politica_b.TabStop = false;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Dias";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // RNDplb
+            // 
+            this.RNDplb.HeaderText = "RND";
+            this.RNDplb.Name = "RNDplb";
+            this.RNDplb.ReadOnly = true;
+            // 
+            // CantDemplb
+            // 
+            this.CantDemplb.HeaderText = "Cant. Demandada";
+            this.CantDemplb.Name = "CantDemplb";
+            this.CantDemplb.ReadOnly = true;
+            // 
+            // CantOrdplb
+            // 
+            this.CantOrdplb.HeaderText = "Cant. Ordenada";
+            this.CantOrdplb.Name = "CantOrdplb";
+            this.CantOrdplb.ReadOnly = true;
+            // 
+            // CantVendplb
+            // 
+            this.CantVendplb.HeaderText = "Cant. Vendida";
+            this.CantVendplb.Name = "CantVendplb";
+            this.CantVendplb.ReadOnly = true;
+            // 
+            // CantPerplb
+            // 
+            this.CantPerplb.HeaderText = "Cant Perdida";
+            this.CantPerplb.Name = "CantPerplb";
+            this.CantPerplb.ReadOnly = true;
+            // 
+            // Sobraplb
+            // 
+            this.Sobraplb.HeaderText = "Sobra";
+            this.Sobraplb.Name = "Sobraplb";
+            this.Sobraplb.ReadOnly = true;
+            // 
+            // COplb
+            // 
+            this.COplb.HeaderText = "Costo Compra";
+            this.COplb.Name = "COplb";
+            this.COplb.ReadOnly = true;
+            // 
+            // Reemplb
+            // 
+            this.Reemplb.HeaderText = "Reembolso";
+            this.Reemplb.Name = "Reemplb";
+            this.Reemplb.ReadOnly = true;
+            // 
+            // CUPplb
+            // 
+            this.CUPplb.HeaderText = "CUP";
+            this.CUPplb.Name = "CUPplb";
+            this.CUPplb.ReadOnly = true;
+            // 
+            // Costotalplb
+            // 
+            this.Costotalplb.HeaderText = "Costo total";
+            this.Costotalplb.Name = "Costotalplb";
+            this.Costotalplb.ReadOnly = true;
+            // 
+            // CosAc
+            // 
+            this.CosAc.HeaderText = "Costo Ac";
+            this.CosAc.Name = "CosAc";
+            this.CosAc.ReadOnly = true;
+            // 
             // Dias
             // 
             this.Dias.HeaderText = "Dias";
             this.Dias.Name = "Dias";
             this.Dias.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // RND
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Dias";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.RND.HeaderText = "RND";
+            this.RND.Name = "RND";
+            this.RND.ReadOnly = true;
+            // 
+            // CantDemandada
+            // 
+            this.CantDemandada.HeaderText = "Cant. Demandada";
+            this.CantDemandada.Name = "CantDemandada";
+            this.CantDemandada.ReadOnly = true;
+            // 
+            // CantOrdenada
+            // 
+            this.CantOrdenada.HeaderText = "Cant. Ordenada";
+            this.CantOrdenada.Name = "CantOrdenada";
+            this.CantOrdenada.ReadOnly = true;
+            // 
+            // CantVendida
+            // 
+            this.CantVendida.HeaderText = "Cant. Vendida";
+            this.CantVendida.Name = "CantVendida";
+            this.CantVendida.ReadOnly = true;
+            // 
+            // CantPerdida
+            // 
+            this.CantPerdida.HeaderText = "Cant. Perdida";
+            this.CantPerdida.Name = "CantPerdida";
+            this.CantPerdida.ReadOnly = true;
+            // 
+            // Sobra
+            // 
+            this.Sobra.HeaderText = "Sobra";
+            this.Sobra.Name = "Sobra";
+            this.Sobra.ReadOnly = true;
+            // 
+            // CostCompra
+            // 
+            this.CostCompra.HeaderText = "Costo Compra";
+            this.CostCompra.Name = "CostCompra";
+            this.CostCompra.ReadOnly = true;
+            // 
+            // Reembolso
+            // 
+            this.Reembolso.HeaderText = "Reembolso";
+            this.Reembolso.Name = "Reembolso";
+            this.Reembolso.ReadOnly = true;
+            // 
+            // CosUtPer
+            // 
+            this.CosUtPer.HeaderText = "C.U.P";
+            this.CosUtPer.Name = "CosUtPer";
+            this.CosUtPer.ReadOnly = true;
+            // 
+            // CostoTotal
+            // 
+            this.CostoTotal.HeaderText = "Costo Total";
+            this.CostoTotal.Name = "CostoTotal";
+            this.CostoTotal.ReadOnly = true;
+            // 
+            // CostoAcumulado
+            // 
+            this.CostoAcumulado.HeaderText = "Costo Ac";
+            this.CostoAcumulado.Name = "CostoAcumulado";
+            this.CostoAcumulado.ReadOnly = true;
             // 
             // Form1
             // 
@@ -422,7 +598,29 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView grilla_politica_b;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantDemandada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantOrdenada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantVendida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantPerdida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sobra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reembolso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CosUtPer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoAcumulado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RNDplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantDemplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantOrdplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantVendplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantPerplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sobraplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reemplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUPplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costotalplb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CosAc;
     }
 }
 

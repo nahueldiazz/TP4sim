@@ -1,1 +1,10 @@
 C:\tp4\nuevoProyecto\Tp4Sim\Tp4Sim\bin\Debug\Tp4Sim.exe.config
+C:\tp4\pruebagi\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.exe.config
+C:\tp4\pruebagi\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.exe
+C:\tp4\pruebagi\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.pdb
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csprojResolveAssemblyReference.cache
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.Form1.resources
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.Properties.Resources.resources
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csproj.GenerateResource.Cache
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.exe
+C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.pdb
