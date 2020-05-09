@@ -17,20 +17,20 @@ namespace Tp4Sim
 
         public int intervalosEjercicio(double rnd)
         {
-            if (rnd > 0 && rnd<0.29)
+            if (rnd<0.30)
             {
                 return 20;
             }
-            else if (rnd > 0.30 && rnd < 0.54)
+            else if (rnd < 0.55)
             {
                 return 21;
-            }else if (rnd > 0.55 && rnd < 0.74)
+            }else if (rnd < 0.75)
             {
                 return 22;
-            } else if (rnd > 0.75 && rnd < 0.89)
+            } else if (rnd < 0.90)
             {
                 return 23;
-            }else if (rnd > 0.90 && rnd < 0.94)
+            }else if (rnd < 0.95)
             {
                 return 24;
             }
