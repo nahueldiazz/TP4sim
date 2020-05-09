@@ -8,3 +8,13 @@ C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.Properties.Resources.resources
 C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csproj.GenerateResource.Cache
 C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.exe
 C:\tp4\pruebagi\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.pdb
+C:\Users\HP\Documents\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.exe.config
+C:\Users\HP\Documents\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.exe
+C:\Users\HP\Documents\TP4sim\Tp4Sim\bin\Debug\Tp4Sim.pdb
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csprojAssemblyReference.cache
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.Form1.resources
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.Properties.Resources.resources
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csproj.GenerateResource.cache
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.exe
+C:\Users\HP\Documents\TP4sim\Tp4Sim\obj\Debug\Tp4Sim.pdb
