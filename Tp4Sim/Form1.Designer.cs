@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cantAMostrar = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.mostrarDesde = new System.Windows.Forms.TextBox();
+            this.cant_generar = new System.Windows.Forms.TextBox();
             this.Generar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.prec_uti_perdida = new System.Windows.Forms.TextBox();
@@ -37,6 +43,7 @@
             this.precio_reemb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.precio_costo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cant_perd = new System.Windows.Forms.TextBox();
@@ -62,6 +69,7 @@
             this.CosUtPer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostoAcumulado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prom_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.grilla_politica_b = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,16 +84,9 @@
             this.CUPplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costotalplb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CosAc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cant_generar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cantAMostrar = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.mostrarDesde = new System.Windows.Forms.TextBox();
-            this.prom_costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo_prom_plb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -93,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grilla_politica_a)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_politica_b)).BeginInit();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,6 +110,63 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parametros de Entrada";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.cantAMostrar);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.mostrarDesde);
+            this.groupBox7.Location = new System.Drawing.Point(6, 176);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(284, 69);
+            this.groupBox7.TabIndex = 24;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Elementos a mostrar";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(147, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Cantidad a mostrar";
+            // 
+            // cantAMostrar
+            // 
+            this.cantAMostrar.Location = new System.Drawing.Point(184, 32);
+            this.cantAMostrar.MaxLength = 10;
+            this.cantAMostrar.Name = "cantAMostrar";
+            this.cantAMostrar.Size = new System.Drawing.Size(46, 20);
+            this.cantAMostrar.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(33, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Mostrar desde";
+            // 
+            // mostrarDesde
+            // 
+            this.mostrarDesde.Location = new System.Drawing.Point(51, 32);
+            this.mostrarDesde.MaxLength = 10;
+            this.mostrarDesde.Name = "mostrarDesde";
+            this.mostrarDesde.Size = new System.Drawing.Size(46, 20);
+            this.mostrarDesde.TabIndex = 8;
+            // 
+            // cant_generar
+            // 
+            this.cant_generar.Location = new System.Drawing.Point(101, 267);
+            this.cant_generar.MaxLength = 10;
+            this.cant_generar.Name = "cant_generar";
+            this.cant_generar.Size = new System.Drawing.Size(79, 20);
+            this.cant_generar.TabIndex = 23;
             // 
             // Generar
             // 
@@ -190,6 +247,16 @@
             this.precio_costo.Size = new System.Drawing.Size(46, 20);
             this.precio_costo.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(86, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Cantidad a Generar";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
@@ -220,7 +287,6 @@
             this.cant_perd.Name = "cant_perd";
             this.cant_perd.Size = new System.Drawing.Size(46, 20);
             this.cant_perd.TabIndex = 18;
-           
             // 
             // label1
             // 
@@ -414,6 +480,12 @@
             this.CostoAcumulado.Name = "CostoAcumulado";
             this.CostoAcumulado.ReadOnly = true;
             // 
+            // prom_costo
+            // 
+            this.prom_costo.HeaderText = "Promedio Costo";
+            this.prom_costo.Name = "prom_costo";
+            this.prom_costo.ReadOnly = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.AccessibleDescription = "c";
@@ -528,80 +600,6 @@
             this.CosAc.Name = "CosAc";
             this.CosAc.ReadOnly = true;
             // 
-            // cant_generar
-            // 
-            this.cant_generar.Location = new System.Drawing.Point(124, 267);
-            this.cant_generar.MaxLength = 6;
-            this.cant_generar.Name = "cant_generar";
-            this.cant_generar.Size = new System.Drawing.Size(46, 20);
-            this.cant_generar.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 251);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Cantidad a Generar";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.cantAMostrar);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Controls.Add(this.mostrarDesde);
-            this.groupBox7.Location = new System.Drawing.Point(6, 176);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(284, 69);
-            this.groupBox7.TabIndex = 24;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Elementos a mostrar";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Cantidad a mostrar";
-            // 
-            // cantAMostrar
-            // 
-            this.cantAMostrar.Location = new System.Drawing.Point(184, 32);
-            this.cantAMostrar.MaxLength = 6;
-            this.cantAMostrar.Name = "cantAMostrar";
-            this.cantAMostrar.Size = new System.Drawing.Size(46, 20);
-            this.cantAMostrar.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Mostrar desde";
-         
-            // 
-            // mostrarDesde
-            // 
-            this.mostrarDesde.Location = new System.Drawing.Point(51, 32);
-            this.mostrarDesde.MaxLength = 4;
-            this.mostrarDesde.Name = "mostrarDesde";
-            this.mostrarDesde.Size = new System.Drawing.Size(46, 20);
-            this.mostrarDesde.TabIndex = 8;
-            // 
-            // prom_costo
-            // 
-            this.prom_costo.HeaderText = "Promedio Costo";
-            this.prom_costo.Name = "prom_costo";
-            this.prom_costo.ReadOnly = true;
-            // 
             // costo_prom_plb
             // 
             this.costo_prom_plb.HeaderText = "Costo Promedio";
@@ -622,6 +620,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -632,8 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grilla_politica_a)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grilla_politica_b)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }

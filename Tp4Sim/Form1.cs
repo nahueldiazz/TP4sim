@@ -15,7 +15,7 @@ namespace Tp4Sim
 
         public ControlIntervalo valorDelIntervalo = new ControlIntervalo();
         Random rnd = new Random();
-        private int cantidadASimular;
+        private long cantidadASimular;
         int cantDemandadaDiaAnterior;
         int cantPerdidaVenderDiaAnterior;
         double ko;
@@ -40,14 +40,15 @@ namespace Tp4Sim
 
         private void Generar_Click(object sender, EventArgs e)
         {
-
-            cantidadASimular = int.Parse(cant_generar.Text);
+            grilla_politica_a.Rows.Clear();
+            grilla_politica_b.Rows.Clear();
+            cantidadASimular = long.Parse(cant_generar.Text);
             cantDemandadaDiaAnterior = int.Parse(cant_demand.Text);
             cantPerdidaVenderDiaAnterior = int.Parse(cant_perd.Text);
             ko = double.Parse(precio_costo.Text);
             reembolso = double.Parse(precio_reemb.Text);
             ks = double.Parse(prec_uti_perdida.Text);
-            filaDesde= int.Parse(mostrarDesde.Text);
+            filaDesde = int.Parse(mostrarDesde.Text);
             filaHasta = int.Parse(cantAMostrar.Text);
             this.politicaA();
             this.politicaB();
@@ -59,16 +60,17 @@ namespace Tp4Sim
             double nroAleatorio;
             int demandaDiaActual;
             int cantPedidaDiaActual;
-            int cantVendida=0;
+            int cantVendida = 0;
             double costoCompra;
             double costoReembolso;
             double costoUtilidadPerdida;
             double costoTotal;
-            double costoTotalAc=0;
+            double costoTotalAc = 0;
+            double costoPromedio = 0;
 
-            for (int i = 1; i < cantidadASimular; i++)
+            for (int i = 1; i <= cantidadASimular; i++)
             {
-                
+
                 nroAleatorio = this.TruncateFunction(rnd.NextDouble(), 2);
                 demandaDiaActual = valorDelIntervalo.intervalosEjercicio(nroAleatorio);
                 cantPedidaDiaActual = cantDemandadaDiaAnterior + cantPerdidaVenderDiaAnterior;
@@ -80,8 +82,9 @@ namespace Tp4Sim
                     cantPerdidaDiaActual = demandaDiaActual - cantPedidaDiaActual;
                     cantVendida = cantPedidaDiaActual;
                 }
-                
-                if (cantPedidaDiaActual > demandaDiaActual) {
+
+                if (cantPedidaDiaActual > demandaDiaActual)
+                {
                     sobrante = cantPedidaDiaActual - demandaDiaActual;
                     cantVendida = demandaDiaActual;
                 }
@@ -92,23 +95,84 @@ namespace Tp4Sim
                 costoUtilidadPerdida = cantPerdidaDiaActual * ks;
                 costoTotal = costoCompra - costoReembolso + costoUtilidadPerdida;
                 costoTotalAc += costoTotal;
-                if ((filaDesde <= i) && (filaDesde + filaHasta > i))
+                costoPromedio = costoTotalAc / i;
+                if (((filaDesde <= i) && (filaDesde + filaHasta > i)) || i == cantidadASimular)
                 {
                     //Cargar grilla
-                    grilla_politica_a.Rows.Add(i, nroAleatorio, demandaDiaActual, cantPedidaDiaActual, cantVendida,cantPerdidaDiaActual,sobrante, costoCompra, costoReembolso, costoUtilidadPerdida, costoTotal, costoTotalAc);
+                    grilla_politica_a.Rows.Add(i, nroAleatorio, demandaDiaActual, cantPedidaDiaActual,
+                        cantVendida, cantPerdidaDiaActual, sobrante, costoCompra, costoReembolso, costoUtilidadPerdida, costoTotal, this.TruncateFunction(costoTotalAc,4), this.TruncateFunction(costoPromedio,4));
+                }
+
+                if (i == cantidadASimular) {
+                    int r = grilla_politica_a.Rows.Count;
+                    grilla_politica_a.Rows[r-1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+                    grilla_politica_a.Rows[r-1].DefaultCellStyle.BackColor = Color.Yellow;
                 }
                 cantDemandadaDiaAnterior = demandaDiaActual;
-                cantPerdidaVenderDiaAnterior =cantPerdidaDiaActual;
+                cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
             }
 
         }
 
         public void politicaB()
         {
-            var demanda = valorDelIntervalo.intervalosEjercicio(this.TruncateFunction(rnd.NextDouble(), 2));
+            double nroAleatorio;
+            int demandaDiaActual;
+            int cantPedidaDiaActual = 23;
+            int cantVendida = 0;
+            double costoCompra;
+            double costoReembolso;
+            double costoUtilidadPerdida;
+            double costoTotal;
+            double costoTotalAc = 0;
+            double costoPromedio = 0;
+
+            for (int i = 1; i <= cantidadASimular; i++)
+            {
+
+                nroAleatorio = this.TruncateFunction(rnd.NextDouble(), 2);
+                demandaDiaActual = valorDelIntervalo.intervalosEjercicio(nroAleatorio);
+                int cantPerdidaDiaActual = 0;
+                int sobrante = 0;
+
+                if (demandaDiaActual > cantPedidaDiaActual)
+                {
+                    cantPerdidaDiaActual = demandaDiaActual - cantPedidaDiaActual;
+                    cantVendida = cantPedidaDiaActual;
+                }
+
+                if (cantPedidaDiaActual > demandaDiaActual)
+                {
+                    sobrante = cantPedidaDiaActual - demandaDiaActual;
+                    cantVendida = demandaDiaActual;
+                }
+
+
+                costoCompra = cantPedidaDiaActual * ko;
+                costoReembolso = sobrante * reembolso;
+                costoUtilidadPerdida = cantPerdidaDiaActual * ks;
+                costoTotal = costoCompra - costoReembolso + costoUtilidadPerdida;
+                costoTotalAc += costoTotal;
+                costoPromedio = costoTotalAc / i;
+                if (((filaDesde <= i) && (filaDesde + filaHasta > i)) || i == cantidadASimular)
+                {
+                    //Cargar grilla
+                    grilla_politica_b.Rows.Add(i, nroAleatorio, demandaDiaActual, cantPedidaDiaActual,
+                        cantVendida, cantPerdidaDiaActual, sobrante, costoCompra, costoReembolso, costoUtilidadPerdida, costoTotal, this.TruncateFunction(costoTotalAc, 4), this.TruncateFunction(costoPromedio, 4));
+                }
+
+                if (i == cantidadASimular)
+                {
+                    int r = grilla_politica_b.Rows.Count;
+                    grilla_politica_b.Rows[r - 1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+                    grilla_politica_b.Rows[r - 1].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+                cantDemandadaDiaAnterior = demandaDiaActual;
+                cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
+            }
         }
 
-       
+
         public double TruncateFunction(double number, int digit)
         {
             return Math.Truncate((Math.Pow(10.0, (double)digit) * number)) / (Math.Pow(10.0, (double)digit));
