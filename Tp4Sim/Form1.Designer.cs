@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cantAMostrar = new System.Windows.Forms.TextBox();
@@ -98,290 +100,191 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.cant_generar);
             this.groupBox1.Controls.Add(this.Generar);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 339);
-            this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Parametros de Entrada";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox7
             // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.cantAMostrar);
             this.groupBox7.Controls.Add(this.label10);
             this.groupBox7.Controls.Add(this.mostrarDesde);
-            this.groupBox7.Location = new System.Drawing.Point(6, 176);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(284, 69);
-            this.groupBox7.TabIndex = 24;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Elementos a mostrar";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 16);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Cantidad a mostrar";
             // 
             // cantAMostrar
             // 
-            this.cantAMostrar.Location = new System.Drawing.Point(184, 32);
-            this.cantAMostrar.MaxLength = 10;
+            resources.ApplyResources(this.cantAMostrar, "cantAMostrar");
             this.cantAMostrar.Name = "cantAMostrar";
-            this.cantAMostrar.Size = new System.Drawing.Size(46, 20);
-            this.cantAMostrar.TabIndex = 18;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 16);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Mostrar desde";
             // 
             // mostrarDesde
             // 
-            this.mostrarDesde.Location = new System.Drawing.Point(51, 32);
-            this.mostrarDesde.MaxLength = 10;
+            resources.ApplyResources(this.mostrarDesde, "mostrarDesde");
             this.mostrarDesde.Name = "mostrarDesde";
-            this.mostrarDesde.Size = new System.Drawing.Size(46, 20);
-            this.mostrarDesde.TabIndex = 8;
             // 
             // cant_generar
             // 
-            this.cant_generar.Location = new System.Drawing.Point(101, 267);
-            this.cant_generar.MaxLength = 10;
+            resources.ApplyResources(this.cant_generar, "cant_generar");
             this.cant_generar.Name = "cant_generar";
-            this.cant_generar.Size = new System.Drawing.Size(79, 20);
-            this.cant_generar.TabIndex = 23;
             // 
             // Generar
             // 
-            this.Generar.Location = new System.Drawing.Point(97, 303);
+            resources.ApplyResources(this.Generar, "Generar");
+            this.Generar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Generar.Name = "Generar";
-            this.Generar.Size = new System.Drawing.Size(83, 21);
-            this.Generar.TabIndex = 21;
-            this.Generar.Text = "Generar";
-            this.Generar.UseVisualStyleBackColor = true;
+            this.Generar.UseVisualStyleBackColor = false;
             this.Generar.Click += new System.EventHandler(this.Generar_Click);
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.prec_uti_perdida);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.precio_reemb);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.precio_costo);
-            this.groupBox3.Location = new System.Drawing.Point(6, 102);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 66);
-            this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos De Costo";
             // 
             // prec_uti_perdida
             // 
-            this.prec_uti_perdida.Location = new System.Drawing.Point(205, 32);
-            this.prec_uti_perdida.MaxLength = 6;
+            resources.ApplyResources(this.prec_uti_perdida, "prec_uti_perdida");
             this.prec_uti_perdida.Name = "prec_uti_perdida";
-            this.prec_uti_perdida.Size = new System.Drawing.Size(46, 20);
-            this.prec_uti_perdida.TabIndex = 21;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(181, 16);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Utilidad Perdida";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(105, 16);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Reembolso";
             // 
             // precio_reemb
             // 
-            this.precio_reemb.Location = new System.Drawing.Point(118, 32);
-            this.precio_reemb.MaxLength = 6;
+            resources.ApplyResources(this.precio_reemb, "precio_reemb");
             this.precio_reemb.Name = "precio_reemb";
-            this.precio_reemb.Size = new System.Drawing.Size(46, 20);
-            this.precio_reemb.TabIndex = 18;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 16);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Precio Costo";
             // 
             // precio_costo
             // 
-            this.precio_costo.Location = new System.Drawing.Point(22, 32);
-            this.precio_costo.MaxLength = 4;
+            resources.ApplyResources(this.precio_costo, "precio_costo");
             this.precio_costo.Name = "precio_costo";
-            this.precio_costo.Size = new System.Drawing.Size(46, 20);
-            this.precio_costo.TabIndex = 8;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 251);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Cantidad a Generar";
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cant_perd);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cant_demand);
-            this.groupBox2.Location = new System.Drawing.Point(6, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(284, 66);
-            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Dia Anterior";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 16);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Cantidad Perdida";
             // 
             // cant_perd
             // 
-            this.cant_perd.Location = new System.Drawing.Point(184, 32);
-            this.cant_perd.MaxLength = 6;
+            resources.ApplyResources(this.cant_perd, "cant_perd");
             this.cant_perd.Name = "cant_perd";
-            this.cant_perd.Size = new System.Drawing.Size(46, 20);
-            this.cant_perd.TabIndex = 18;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Cantidad demandada";
             // 
             // cant_demand
             // 
-            this.cant_demand.Location = new System.Drawing.Point(51, 32);
-            this.cant_demand.MaxLength = 4;
+            resources.ApplyResources(this.cant_demand, "cant_demand");
             this.cant_demand.Name = "cant_demand";
-            this.cant_demand.Size = new System.Drawing.Size(46, 20);
-            this.cant_demand.TabIndex = 8;
             // 
             // groupBox4
             // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.resultado_);
             this.groupBox4.Controls.Add(this.politica_b);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.politica_A);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(18, 411);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(290, 101);
-            this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Resultados";
             // 
             // resultado_
             // 
-            this.resultado_.AutoSize = true;
-            this.resultado_.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultado_.Location = new System.Drawing.Point(147, 45);
+            resources.ApplyResources(this.resultado_, "resultado_");
             this.resultado_.Name = "resultado_";
-            this.resultado_.Size = new System.Drawing.Size(64, 13);
-            this.resultado_.TabIndex = 25;
-            this.resultado_.Text = "Resultado";
             // 
             // politica_b
             // 
-            this.politica_b.Location = new System.Drawing.Point(74, 62);
-            this.politica_b.MaxLength = 6;
+            resources.ApplyResources(this.politica_b, "politica_b");
             this.politica_b.Name = "politica_b";
-            this.politica_b.Size = new System.Drawing.Size(46, 20);
-            this.politica_b.TabIndex = 24;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 69);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Politica B";
             // 
             // politica_A
             // 
-            this.politica_A.Location = new System.Drawing.Point(74, 24);
-            this.politica_A.MaxLength = 6;
+            resources.ApplyResources(this.politica_A, "politica_A");
             this.politica_A.Name = "politica_A";
-            this.politica_A.Size = new System.Drawing.Size(46, 20);
-            this.politica_A.TabIndex = 22;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 27);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Politica A";
             // 
             // groupBox5
             // 
-            this.groupBox5.AccessibleDescription = "c";
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.grilla_politica_a);
-            this.groupBox5.Location = new System.Drawing.Point(318, 14);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(660, 245);
-            this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Politica A";
             // 
             // grilla_politica_a
             // 
+            resources.ApplyResources(this.grilla_politica_a, "grilla_politica_a");
             this.grilla_politica_a.AllowUserToAddRows = false;
             this.grilla_politica_a.AllowUserToDeleteRows = false;
             this.grilla_politica_a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -399,109 +302,99 @@
             this.CostoTotal,
             this.CostoAcumulado,
             this.prom_costo});
-            this.grilla_politica_a.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grilla_politica_a.Location = new System.Drawing.Point(3, 16);
             this.grilla_politica_a.Name = "grilla_politica_a";
             this.grilla_politica_a.ReadOnly = true;
             this.grilla_politica_a.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grilla_politica_a.Size = new System.Drawing.Size(654, 226);
-            this.grilla_politica_a.TabIndex = 0;
             this.grilla_politica_a.TabStop = false;
             // 
             // Dias
             // 
-            this.Dias.HeaderText = "Dias";
+            resources.ApplyResources(this.Dias, "Dias");
             this.Dias.Name = "Dias";
             this.Dias.ReadOnly = true;
             // 
             // RND
             // 
-            this.RND.HeaderText = "RND";
+            resources.ApplyResources(this.RND, "RND");
             this.RND.Name = "RND";
             this.RND.ReadOnly = true;
             // 
             // CantDemandada
             // 
-            this.CantDemandada.HeaderText = "Cant. Demandada";
+            resources.ApplyResources(this.CantDemandada, "CantDemandada");
             this.CantDemandada.Name = "CantDemandada";
             this.CantDemandada.ReadOnly = true;
             // 
             // CantOrdenada
             // 
-            this.CantOrdenada.HeaderText = "Cant. Ordenada";
+            resources.ApplyResources(this.CantOrdenada, "CantOrdenada");
             this.CantOrdenada.Name = "CantOrdenada";
             this.CantOrdenada.ReadOnly = true;
             // 
             // CantVendida
             // 
-            this.CantVendida.HeaderText = "Cant. Vendida";
+            resources.ApplyResources(this.CantVendida, "CantVendida");
             this.CantVendida.Name = "CantVendida";
             this.CantVendida.ReadOnly = true;
             // 
             // CantPerdida
             // 
-            this.CantPerdida.HeaderText = "Cant. Perdida";
+            resources.ApplyResources(this.CantPerdida, "CantPerdida");
             this.CantPerdida.Name = "CantPerdida";
             this.CantPerdida.ReadOnly = true;
             // 
             // Sobra
             // 
-            this.Sobra.HeaderText = "Sobra";
+            resources.ApplyResources(this.Sobra, "Sobra");
             this.Sobra.Name = "Sobra";
             this.Sobra.ReadOnly = true;
             // 
             // CostCompra
             // 
-            this.CostCompra.HeaderText = "Costo Compra";
+            resources.ApplyResources(this.CostCompra, "CostCompra");
             this.CostCompra.Name = "CostCompra";
             this.CostCompra.ReadOnly = true;
             // 
             // Reembolso
             // 
-            this.Reembolso.HeaderText = "Reembolso";
+            resources.ApplyResources(this.Reembolso, "Reembolso");
             this.Reembolso.Name = "Reembolso";
             this.Reembolso.ReadOnly = true;
             // 
             // CosUtPer
             // 
-            this.CosUtPer.HeaderText = "C.U.P";
+            resources.ApplyResources(this.CosUtPer, "CosUtPer");
             this.CosUtPer.Name = "CosUtPer";
             this.CosUtPer.ReadOnly = true;
             // 
             // CostoTotal
             // 
-            this.CostoTotal.HeaderText = "Costo Total";
+            resources.ApplyResources(this.CostoTotal, "CostoTotal");
             this.CostoTotal.Name = "CostoTotal";
             this.CostoTotal.ReadOnly = true;
             // 
             // CostoAcumulado
             // 
-            this.CostoAcumulado.HeaderText = "Costo Ac";
+            resources.ApplyResources(this.CostoAcumulado, "CostoAcumulado");
             this.CostoAcumulado.Name = "CostoAcumulado";
             this.CostoAcumulado.ReadOnly = true;
             // 
             // prom_costo
             // 
-            this.prom_costo.HeaderText = "Promedio Costo";
+            resources.ApplyResources(this.prom_costo, "prom_costo");
             this.prom_costo.Name = "prom_costo";
             this.prom_costo.ReadOnly = true;
             // 
             // groupBox6
             // 
-            this.groupBox6.AccessibleDescription = "c";
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.grilla_politica_b);
-            this.groupBox6.Location = new System.Drawing.Point(321, 265);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(660, 250);
-            this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Politica B";
             // 
             // grilla_politica_b
             // 
+            resources.ApplyResources(this.grilla_politica_b, "grilla_politica_b");
             this.grilla_politica_b.AllowUserToAddRows = false;
             this.grilla_politica_b.AllowUserToDeleteRows = false;
             this.grilla_politica_b.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -519,104 +412,99 @@
             this.Costotalplb,
             this.CosAc,
             this.costo_prom_plb});
-            this.grilla_politica_b.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grilla_politica_b.Location = new System.Drawing.Point(3, 16);
             this.grilla_politica_b.Name = "grilla_politica_b";
             this.grilla_politica_b.ReadOnly = true;
             this.grilla_politica_b.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grilla_politica_b.Size = new System.Drawing.Size(654, 231);
-            this.grilla_politica_b.TabIndex = 0;
             this.grilla_politica_b.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Dias";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // RNDplb
             // 
-            this.RNDplb.HeaderText = "RND";
+            resources.ApplyResources(this.RNDplb, "RNDplb");
             this.RNDplb.Name = "RNDplb";
             this.RNDplb.ReadOnly = true;
             // 
             // CantDemplb
             // 
-            this.CantDemplb.HeaderText = "Cant. Demandada";
+            resources.ApplyResources(this.CantDemplb, "CantDemplb");
             this.CantDemplb.Name = "CantDemplb";
             this.CantDemplb.ReadOnly = true;
             // 
             // CantOrdplb
             // 
-            this.CantOrdplb.HeaderText = "Cant. Ordenada";
+            resources.ApplyResources(this.CantOrdplb, "CantOrdplb");
             this.CantOrdplb.Name = "CantOrdplb";
             this.CantOrdplb.ReadOnly = true;
             // 
             // CantVendplb
             // 
-            this.CantVendplb.HeaderText = "Cant. Vendida";
+            resources.ApplyResources(this.CantVendplb, "CantVendplb");
             this.CantVendplb.Name = "CantVendplb";
             this.CantVendplb.ReadOnly = true;
             // 
             // CantPerplb
             // 
-            this.CantPerplb.HeaderText = "Cant Perdida";
+            resources.ApplyResources(this.CantPerplb, "CantPerplb");
             this.CantPerplb.Name = "CantPerplb";
             this.CantPerplb.ReadOnly = true;
             // 
             // Sobraplb
             // 
-            this.Sobraplb.HeaderText = "Sobra";
+            resources.ApplyResources(this.Sobraplb, "Sobraplb");
             this.Sobraplb.Name = "Sobraplb";
             this.Sobraplb.ReadOnly = true;
             // 
             // COplb
             // 
-            this.COplb.HeaderText = "Costo Compra";
+            resources.ApplyResources(this.COplb, "COplb");
             this.COplb.Name = "COplb";
             this.COplb.ReadOnly = true;
             // 
             // Reemplb
             // 
-            this.Reemplb.HeaderText = "Reembolso";
+            resources.ApplyResources(this.Reemplb, "Reemplb");
             this.Reemplb.Name = "Reemplb";
             this.Reemplb.ReadOnly = true;
             // 
             // CUPplb
             // 
-            this.CUPplb.HeaderText = "CUP";
+            resources.ApplyResources(this.CUPplb, "CUPplb");
             this.CUPplb.Name = "CUPplb";
             this.CUPplb.ReadOnly = true;
             // 
             // Costotalplb
             // 
-            this.Costotalplb.HeaderText = "Costo total";
+            resources.ApplyResources(this.Costotalplb, "Costotalplb");
             this.Costotalplb.Name = "Costotalplb";
             this.Costotalplb.ReadOnly = true;
             // 
             // CosAc
             // 
-            this.CosAc.HeaderText = "Costo Ac";
+            resources.ApplyResources(this.CosAc, "CosAc");
             this.CosAc.Name = "CosAc";
             this.CosAc.ReadOnly = true;
             // 
             // costo_prom_plb
             // 
-            this.costo_prom_plb.HeaderText = "Costo Promedio";
+            resources.ApplyResources(this.costo_prom_plb, "costo_prom_plb");
             this.costo_prom_plb.Name = "costo_prom_plb";
             this.costo_prom_plb.ReadOnly = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 674);
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -694,6 +582,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn prom_costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo_prom_plb;
+        private System.Windows.Forms.Button button1;
     }
 }
 
