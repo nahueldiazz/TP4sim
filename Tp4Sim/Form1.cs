@@ -40,6 +40,12 @@ namespace Tp4Sim
 
         private void Generar_Click(object sender, EventArgs e)
         {
+            if (mostrarDesde.Text == "" || cant_generar.Text =="" || cantAMostrar.Text == "" )
+            {
+                MessageBox.Show("Faltan datos para generar simulación.");
+                return;
+            }
+
             grilla_politica_a.Rows.Clear();
             grilla_politica_b.Rows.Clear();
             cantidadASimular = long.Parse(cant_generar.Text);
@@ -50,9 +56,28 @@ namespace Tp4Sim
             ks = double.Parse(prec_uti_perdida.Text);
             filaDesde = int.Parse(mostrarDesde.Text);
             filaHasta = int.Parse(cantAMostrar.Text);
+            this.controlInput();
+        }
+
+        private void controlInput()
+        {
+            if (filaDesde > cantidadASimular)
+            {
+                 MessageBox.Show("'Mostrar Desde' no debe ser mayor a 'Cantidad a simular'. ");
+                 return;
+            }
             this.politicaA();
             this.politicaB();
+            this.compararPoliticas();
 
+        }
+
+        public void compararPoliticas()
+        {
+            var polA = double.Parse(this.politica_A.Text);
+            var polB = double.Parse(this.politica_b.Text);
+
+            resultado_.Text = polB <= polA ? "Política eficiente: B" : "Política eficiente: A";
         }
 
         public void politicaA()
@@ -112,6 +137,8 @@ namespace Tp4Sim
                 cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
             }
 
+            this.politica_A.Text = this.TruncateFunction(costoPromedio,2).ToString();
+
         }
 
         public void politicaB()
@@ -170,6 +197,8 @@ namespace Tp4Sim
                 cantDemandadaDiaAnterior = demandaDiaActual;
                 cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
             }
+
+            this.politica_b.Text = this.TruncateFunction(costoPromedio, 2).ToString();
         }
 
 
@@ -178,5 +207,21 @@ namespace Tp4Sim
             return Math.Truncate((Math.Pow(10.0, (double)digit) * number)) / (Math.Pow(10.0, (double)digit));
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cant_demand.Text = "20";
+            cant_perd.Text = "3";
+            precio_costo.Text = "0.8";
+            precio_reemb.Text = "0.2";
+            prec_uti_perdida.Text = "0.4";
+            cantAMostrar.Clear();
+            mostrarDesde.Clear();
+            cant_generar.Clear();
+            grilla_politica_a.Rows.Clear();
+            grilla_politica_b.Rows.Clear();
+            politica_A.Clear();
+            politica_b.Clear();
+            resultado_.Text = "Resultado";
+        }
     }
 }
