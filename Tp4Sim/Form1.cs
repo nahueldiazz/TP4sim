@@ -63,7 +63,7 @@ namespace Tp4Sim
         {
             if (filaDesde > cantidadASimular)
             {
-                 MessageBox.Show("'Mostrar Desde' no debe ser mayor a 'Cantidad a simular'. ");
+                 MessageBox.Show("'Mostrar Desde' no debe ser mayor a 'Cantidad a generar'. ");
                  return;
             }
             this.politicaA();
@@ -211,9 +211,9 @@ namespace Tp4Sim
         {
             cant_demand.Text = "20";
             cant_perd.Text = "3";
-            precio_costo.Text = "0.8";
-            precio_reemb.Text = "0.2";
-            prec_uti_perdida.Text = "0.4";
+            precio_costo.Text = "0,8";
+            precio_reemb.Text = "0,2";
+            prec_uti_perdida.Text = "0,4";
             cantAMostrar.Clear();
             mostrarDesde.Clear();
             cant_generar.Clear();
