@@ -16,7 +16,7 @@ namespace Tp4Sim
         public ControlIntervalo valorDelIntervalo = new ControlIntervalo();
         Random rnd = new Random();
         private long cantidadASimular;
-        int cantDemandadaDiaAnterior;
+        int cantVendidaDiaAnterior;
         int cantPerdidaVenderDiaAnterior;
         double ko;
         double reembolso;
@@ -26,7 +26,7 @@ namespace Tp4Sim
         public Form1()
         {
             InitializeComponent();
-            cant_demand.Text = @"20";
+            cant_vendida.Text = @"20";
             cant_perd.Text = @"3";
             precio_costo.Text = @"0,8";
             precio_reemb.Text = @"0,2";
@@ -49,7 +49,7 @@ namespace Tp4Sim
             grilla_politica_a.Rows.Clear();
             grilla_politica_b.Rows.Clear();
             cantidadASimular = long.Parse(cant_generar.Text);
-            cantDemandadaDiaAnterior = int.Parse(cant_demand.Text);
+            cantVendidaDiaAnterior = int.Parse(cant_vendida.Text);
             cantPerdidaVenderDiaAnterior = int.Parse(cant_perd.Text);
             ko = double.Parse(precio_costo.Text);
             reembolso = double.Parse(precio_reemb.Text);
@@ -98,11 +98,11 @@ namespace Tp4Sim
 
                 nroAleatorio = this.TruncateFunction(rnd.NextDouble(), 2);
                 demandaDiaActual = valorDelIntervalo.intervalosEjercicio(nroAleatorio);
-                cantPedidaDiaActual = cantDemandadaDiaAnterior + cantPerdidaVenderDiaAnterior;
+                cantPedidaDiaActual = cantVendidaDiaAnterior + cantPerdidaVenderDiaAnterior;
                 int cantPerdidaDiaActual = 0;
                 int sobrante = 0;
 
-                if (demandaDiaActual > cantPedidaDiaActual)
+                if (demandaDiaActual >= cantPedidaDiaActual)
                 {
                     cantPerdidaDiaActual = demandaDiaActual - cantPedidaDiaActual;
                     cantVendida = cantPedidaDiaActual;
@@ -114,7 +114,7 @@ namespace Tp4Sim
                     cantVendida = demandaDiaActual;
                 }
 
-
+                
                 costoCompra = cantPedidaDiaActual * ko;
                 costoReembolso = sobrante * reembolso;
                 costoUtilidadPerdida = cantPerdidaDiaActual * ks;
@@ -133,7 +133,7 @@ namespace Tp4Sim
                     grilla_politica_a.Rows[r-1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
                     grilla_politica_a.Rows[r-1].DefaultCellStyle.BackColor = Color.Yellow;
                 }
-                cantDemandadaDiaAnterior = demandaDiaActual;
+                cantVendidaDiaAnterior = cantVendida;
                 cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
             }
 
@@ -162,7 +162,7 @@ namespace Tp4Sim
                 int cantPerdidaDiaActual = 0;
                 int sobrante = 0;
 
-                if (demandaDiaActual > cantPedidaDiaActual)
+                if (demandaDiaActual >= cantPedidaDiaActual)
                 {
                     cantPerdidaDiaActual = demandaDiaActual - cantPedidaDiaActual;
                     cantVendida = cantPedidaDiaActual;
@@ -194,7 +194,7 @@ namespace Tp4Sim
                     grilla_politica_b.Rows[r - 1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
                     grilla_politica_b.Rows[r - 1].DefaultCellStyle.BackColor = Color.Yellow;
                 }
-                cantDemandadaDiaAnterior = demandaDiaActual;
+                cantVendidaDiaAnterior = cantVendida;
                 cantPerdidaVenderDiaAnterior = cantPerdidaDiaActual;
             }
 
@@ -209,7 +209,7 @@ namespace Tp4Sim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cant_demand.Text = "20";
+            cant_vendida.Text = "20";
             cant_perd.Text = "3";
             precio_costo.Text = "0,8";
             precio_reemb.Text = "0,2";
