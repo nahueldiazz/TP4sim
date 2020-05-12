@@ -50,7 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cant_perd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cant_demand = new System.Windows.Forms.TextBox();
+            this.cant_vendida = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.resultado_ = new System.Windows.Forms.Label();
             this.politica_b = new System.Windows.Forms.TextBox();
@@ -100,7 +100,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.cant_generar);
@@ -108,24 +107,25 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox7
             // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.cantAMostrar);
             this.groupBox7.Controls.Add(this.label10);
             this.groupBox7.Controls.Add(this.mostrarDesde);
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
             // 
@@ -156,21 +156,21 @@
             // 
             // Generar
             // 
-            resources.ApplyResources(this.Generar, "Generar");
             this.Generar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.Generar, "Generar");
             this.Generar.Name = "Generar";
             this.Generar.UseVisualStyleBackColor = false;
             this.Generar.Click += new System.EventHandler(this.Generar_Click);
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.prec_uti_perdida);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.precio_reemb);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.precio_costo);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -211,11 +211,11 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cant_perd);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.cant_demand);
+            this.groupBox2.Controls.Add(this.cant_vendida);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -234,19 +234,19 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // cant_demand
+            // cant_vendida
             // 
-            resources.ApplyResources(this.cant_demand, "cant_demand");
-            this.cant_demand.Name = "cant_demand";
+            resources.ApplyResources(this.cant_vendida, "cant_vendida");
+            this.cant_vendida.Name = "cant_vendida";
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.resultado_);
             this.groupBox4.Controls.Add(this.politica_b);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.politica_A);
             this.groupBox4.Controls.Add(this.label8);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -284,7 +284,6 @@
             // 
             // grilla_politica_a
             // 
-            resources.ApplyResources(this.grilla_politica_a, "grilla_politica_a");
             this.grilla_politica_a.AllowUserToAddRows = false;
             this.grilla_politica_a.AllowUserToDeleteRows = false;
             this.grilla_politica_a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -302,6 +301,7 @@
             this.CostoTotal,
             this.CostoAcumulado,
             this.prom_costo});
+            resources.ApplyResources(this.grilla_politica_a, "grilla_politica_a");
             this.grilla_politica_a.Name = "grilla_politica_a";
             this.grilla_politica_a.ReadOnly = true;
             this.grilla_politica_a.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -394,7 +394,6 @@
             // 
             // grilla_politica_b
             // 
-            resources.ApplyResources(this.grilla_politica_b, "grilla_politica_b");
             this.grilla_politica_b.AllowUserToAddRows = false;
             this.grilla_politica_b.AllowUserToDeleteRows = false;
             this.grilla_politica_b.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -412,6 +411,7 @@
             this.Costotalplb,
             this.CosAc,
             this.costo_prom_plb});
+            resources.ApplyResources(this.grilla_politica_b, "grilla_politica_b");
             this.grilla_politica_b.Name = "grilla_politica_b";
             this.grilla_politica_b.ReadOnly = true;
             this.grilla_politica_b.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -537,7 +537,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox cant_perd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox cant_demand;
+        private System.Windows.Forms.TextBox cant_vendida;
         private System.Windows.Forms.Button Generar;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label8;
