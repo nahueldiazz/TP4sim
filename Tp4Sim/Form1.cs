@@ -26,7 +26,7 @@ namespace Tp4Sim
         public Form1()
         {
             InitializeComponent();
-            cant_vendida.Text = @"20";
+            cant_vendida.Text = @"17";
             cant_perd.Text = @"3";
             precio_costo.Text = @"0,8";
             precio_reemb.Text = @"0,2";
@@ -45,7 +45,7 @@ namespace Tp4Sim
                 MessageBox.Show("Faltan datos para generar simulación.");
                 return;
             }
-
+            
             grilla_politica_a.Rows.Clear();
             grilla_politica_b.Rows.Clear();
             cantidadASimular = long.Parse(cant_generar.Text);
@@ -56,6 +56,8 @@ namespace Tp4Sim
             ks = double.Parse(prec_uti_perdida.Text);
             filaDesde = int.Parse(mostrarDesde.Text);
             filaHasta = int.Parse(cantAMostrar.Text);
+
+           
             this.controlInput();
         }
 
@@ -66,6 +68,21 @@ namespace Tp4Sim
                  MessageBox.Show("'Mostrar Desde' no debe ser mayor a 'Cantidad a generar'. ");
                  return;
             }
+            if (filaDesde <= 0 || filaHasta <= 0 || cantidadASimular <= 0)
+            {
+                MessageBox.Show("Los datos ingresados no son correctos");
+                MessageBox.Show("Ingrese numeros positivios");
+                return;
+
+            }
+            if (ko <= 0 || ks <= 0 || reembolso <= 0)
+            {
+                MessageBox.Show("Los costos no pueden ser negativos");
+                return;
+                                    
+            }
+
+
             this.politicaA();
             this.politicaB();
             this.compararPoliticas();
@@ -121,6 +138,9 @@ namespace Tp4Sim
                 costoTotal = costoCompra - costoReembolso + costoUtilidadPerdida;
                 costoTotalAc += costoTotal;
                 costoPromedio = costoTotalAc / i;
+
+                
+                 
                 if (((filaDesde <= i) && (filaDesde + filaHasta > i)) || i == cantidadASimular)
                 {
                     //Cargar grilla
@@ -209,7 +229,7 @@ namespace Tp4Sim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cant_vendida.Text = "20";
+            cant_vendida.Text = "17";
             cant_perd.Text = "3";
             precio_costo.Text = "0,8";
             precio_reemb.Text = "0,2";
